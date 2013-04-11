@@ -1,0 +1,615 @@
+/* declarations used for  all styles */
+/* use clas="class1 class2 class3" for multiple classes*/
+
+/*this can be used in the future. no decent browser support for custom properties yet.
+:root{
+  / *480px = anything the width of a legacy iPhone in landscape mode or above* /
+	var-bitsybbs-b-width:480px;/ *anything with under 480 pixel 'units'(not pixels) in width is considered a 'bitsy' device. (smartphone/touch-screen music-player/etc)* /
+}
+*/
+
+html{
+	text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+}
+
+body{
+	text-align:left;
+	margin: 0px;
+	padding:0px;
+	/*'style-less', make it revert to 300_baud-style, rather than the glaring default white/black/Times*/
+	background-color:black;
+	font-family:Courier,monospace;
+	color:#FFFFAA;
+}
+
+/*anti-layoutbreak-with-long-string*/
+body, h1, h2, h3, h4, h5, h6{
+	overflow-x:hidden;
+}
+
+.po{
+	margin-bottom: 9px;
+}
+.po .hd{
+	vertical-align:top;
+}
+.ms{
+	display:inline;
+}
+.bd .tn{
+	margin-right:5px;
+	margin-bottom:5px;
+}
+.pn{
+	float:right;
+}
+a{
+	color:inherit;
+	border-style: none;
+	text-decoration: underline;
+}
+/*.sh - No link hinting. Apply to a table/etc that is a list of topics, etc, has no in-depth content(which would require links to hint with an underline or such so that you know they are there), and links should not be hinted with underlines.*/
+.sh a, .hd a, .pl a, .np a{
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: none;
+}
+.sh a:hover, .hd a:hover, .pl a:hover, .np a:hover{
+	text-decoration: underline;
+}
+
+.tb, .tg{
+	width:100%;
+	margin-bottom:5px;
+}
+
+/*.tb td a:visited, .tg td a:visited{
+	font-weight:lighter;
+	color:green;
+	font-style:italic;
+}*/
+
+/*#thds, .tb{
+	width:100%;
+}*/
+/*#thds a:link{
+	font-weight:bold;
+}
+#thds a.mt, #thds a.mt:link{
+	font-weight:normal;
+}*/
+
+/*h1{
+	font-size:15px;
+}
+h2{
+	font-size:14px;
+}
+h3{
+	font-size:13px;
+}
+h4{
+	font-size:12px;
+}*/
+
+h1{
+	font-size:1.45em;
+}
+h2{
+	font-size:1.3em;
+}
+h3{
+	font-size:1.26em;
+}
+h4{
+	font-size:1.17em;
+}
+h5{
+	font-size:1.118em;
+}
+h6{
+	font-size:1.05em;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 6px 0 6px 0;
+	padding-left:5px;
+	text-align:inherit;
+}
+
+td,th,div,pre,p{
+	padding: 0px;
+	margin: 0px;
+}
+td{
+	vertical-align:top;
+}
+
+/*get rid of internal margins and borders of table. do not want for bitsyBBS styling, and if using tables as a layout systen, also do not want*/
+table, thead, tbody, tfoot, tr, th, td{
+	border-style:none;
+	border-width:0px;
+	border-color:initial;
+}
+table{
+	border-collapse: collapse;
+}
+img{
+	border-style: none;
+}
+object, embed{
+	outline: none;
+}
+
+.banmsg{
+	color: red;
+	font-weight: bold;
+	cursor:not-allowed;
+}
+.warn{
+	color: #AA0000;
+	font-weight: bold;
+	cursor:no-drop;
+}
+.laud{
+	color: #00AA00;
+	font-weight: bold;
+}
+
+/*Styling Divs*/
+
+.mod{
+	color:red;
+	font-weight:bold;
+}
+a .mod{
+	text-decoration:underline;
+}
+a .mod:hover{
+	text-decoration:none;
+}
+.rte{
+	position: absolute;
+	z-index: -2;
+	top: 0px;
+	right: 0px;
+	background-image: url('(default)/rminus.png');
+	background-position: top right;
+	background-repeat: repeat-x;
+	width: 55px; height: 11px;
+}
+.rtf{
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	background-image: url('(default)/rplus.png');
+	background-position: top left;
+	background-repeat: repeat-x;
+	width: 55px; height: 11px;
+}
+.rtet{
+	visibility: hidden;
+	position: absolute;
+	z-index: -4;
+	top: 0px;
+	right: 0px;
+	background-image: url('(default)/rminus.png');
+	background-position: top right;
+	background-repeat: repeat-x;
+	width: 55px; height: 11px;
+}
+.rtft{
+	visibility: hidden;
+	position: absolute;
+	z-index: -3;
+	top: 0px;
+	left: 0px;
+	background-image: url('(default)/rplus.png');
+	background-position: top left;
+	background-repeat: repeat-x;
+	width: 55px; height: 11px;
+}
+.rtb{
+	float:left;
+	display:inline-block;
+	background-repeat: repeat-x;
+	cursor: pointer;
+	width: 11px; height: 11px;
+}
+.rth{
+	display:inline-block;
+	z-index: 5;
+	position: relative;
+	width: 55px;
+	height: 11px;
+}
+.an128, .an64, .an32, .an16{
+	cursor: help;
+}
+.tc128, .tc64, .tc32, .tc16{
+	cursor: help;
+}
+.anon{
+	cursor:help;
+}
+.ts{
+	cursor:progress;
+}
+.tc{
+	cursor:help;
+}
+.tc span{
+	font-style:italic;
+}
+
+.nv{/*name-vatar: name stuff must be tweaked for a layout with an avatar*/
+	display:inline-block;
+	min-height:32px;
+	vertical-align:top;
+	padding-left:5px;
+}
+.av{
+	width: 32px; height: 32px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	display: inline-block;
+	text-align:center;
+	line-height:32px;
+	font-weight:bold;
+	font-size:32px;
+	cursor:default;
+}
+.tb .av, .tg .av{
+	width: 1em; height: 1em;
+	line-height:1em;
+	font-size:1em;
+}
+.bd, .gf, .ft, .nt{
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+	padding-bottom:10px;
+}
+.split{
+	width:50%;float:left;
+}
+.gf{
+	clear:both;
+}
+.hd{/*text header*/
+	/*text-align:left;*/
+	vertical-align:middle;
+}
+.hd.pl, .hd.tb{
+	font-weight:bold;
+}
+.bd, .nt{/*text body*/
+	text-align:inherit;
+	overflow:hidden;
+}
+
+/*Anti-Float-screwing-up-layout: purge wonky floats sticking out of div on post head or other areas/
+.af, .bd{
+	clear:both;
+}*/
+
+.ms{
+	overflow:auto;
+}
+.ft{/*footer / signature*/
+	border-width:2px;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	font-size: 10px;
+	text-align:inherit;
+}
+.sg{
+	max-height:150px;
+	overflow:hidden;
+}
+.qt{
+	display:block;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:0px;
+	margin-right:0px;
+	padding:5px;
+	padding-bottom:10px;
+}
+.hr{
+	display:inline-block;
+	width:100%;
+}
+.bo, .gf, .nt, .qt{/*standard bordered items*/
+	border-style:solid;
+	border-width:2px;
+}
+.qt{
+	border-style:dashed;
+}
+.gf{
+	text-align:inherit;
+	border-bottom-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+	margin-top:8px;
+}
+.lb{
+	border-style:solid;
+	border-width:2px;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+.lc{
+	border-style:solid;
+	border-bottom-width:2px;
+	border-top-width:0px;
+	border-left-width:0px;
+	border-right-width:2px;
+}
+.lr{
+	border-style:solid;
+	border-bottom-width:0px;
+	border-top-width:2px;
+	border-left-width:0px;
+	border-right-width:0px;
+}
+ul{
+	margin: 12px 0 2px 0;
+}
+li{
+	margin-bottom:6px;
+}
+.pl li, .np li{
+	display:inline-block;
+	margin: 0 6px 0 6px;
+}
+.pl, .np{
+	/*clear:both;*/
+	text-align:center;
+	list-style-type:none;
+	font-weight:bold;
+	padding:6px 0 6px 0;
+	margin: 0 0 0 0;
+}
+
+.tb td, .tb th, .tg td, .tg th, .hd, p{
+/*.l1, .l2, .l1 td, .l2 td, .l1 th, .l2 th, .hd th, .hd td, .lp, .lp td, .lp th{*/
+	padding:5px;
+	text-align:inherit;
+}
+p{
+	padding-bottom:10px;
+}
+.thread p{
+	margin:0px;
+	padding:0px;
+}
+
+ul{
+	padding-right:5px;
+}
+.l{/*spoiler*/
+	background-color:black;
+	color:transparent;
+	cursor:help;
+}
+/*.unspoil{
+	background-color:black;
+	color:white;
+}*/
+.l:hover{
+	color:white;
+}
+.l a, .l a:link, .l a:visited{
+	color:inherit;
+}
+.l span{/*for styling spans within the spoil span*/
+	background-color:inherit;
+}
+.l img{
+	background-color:inherit;
+	padding:5px;
+	/*filter:brightness(-1);/ *blur(10px) grayscale(1) opacity(0);* /
+	-webkit-filter:brightness(-1);*/
+}
+.l:hover img{
+	text-indent:initial;
+	/*filter:initial;
+	-webkit-filter:initial;*/
+}
+/*.spoil a:hover, .spoil a:active{
+	color:#EEEEEE;
+}*/
+/*.spoil img{
+	width:0px;
+	height:0px;
+	border:30px solid black;
+	visibility:hidden;
+}
+.spoil img:hover{
+	width:auto;
+	height:auto;
+	border:none;
+}*/
+
+.b{
+	font-weight:bold;
+}
+.i{
+	font-style:italic;
+}
+.u{
+	text-decoration:underline;
+}
+.k{
+	text-decoration:line-through;
+}
+/*.cn{
+	text-align:center;
+}*/
+.o{
+	text-decoration:overline;
+}
+@keyframes bitsybbs-flash{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+@-webkit-keyframes bitsybbs-flash{
+	0%{opacity:0;}
+	100%{opacity:1;}
+}
+.f{
+	animation:bitsybbs-flash 1s alternate infinite;
+	-webkit-animation:bitsybbs-flash 1s alternate infinite;
+	/*text-decoration:blink;*/
+}
+.g{
+	opacity:0.50;
+}
+.m{/*marked/hilighted*/
+	background-color:black;
+	color:white;
+}
+.d{/*dl - dotted line*/
+	border-bottom-style:dotted;
+	border-bottom-width:1px;
+}
+.h{
+	border-bottom-style:dashed;
+	border-bottom-width:1px;
+}
+.D{
+	border-style:dotted;
+	border-width:1px;
+}
+.H{
+	border-style:dashed;
+	border-width:1px;
+}
+.x{
+	border-style:solid;
+	border-width:1px;
+}
+.s{
+	font-size:0.85em;
+	vertical-align:sub;
+}
+.p{
+	font-size:0.85em;
+	vertical-align:super;
+}
+
+/*div.an128, div.me128, div.tc128, .av128, div.an64, div.me64, div.tc64, .av64, div.an32, div.me32, .av32, div.tc32, div.an16, div.me16, .av16, div.tc16, div.an8, div.me8 .av8{
+	float: left;
+}*/
+
+.mn{
+	white-space:nowrap;
+	width:1%;
+}
+
+.lf{
+	display:inline;
+}
+.bitsy, .by{
+	cursor:zoom-in;
+	cursor:-moz-zoom-in;
+	cursor:-webkit-zoom-in;
+}
+
+input[type="text"], textarea{
+	font-family:inherit;
+	font-size:inherit;
+}
+
+/*tweaks for large screen 'non-bitsy' devices*/
+@media (min-width:480px){
+	/*bitsy screen based on the width, may turn off in portrait mode*/
+	body{
+		padding:20px;
+	}
+	.po{
+		margin-bottom: 12px;
+	}
+	.nt{
+		margin-bottom:8px;
+	}
+	.gf{
+		margin-top:15px;
+	}
+	p, h1, h2, h3, h4, h5, h6, .gf{
+		padding-left:0px;
+		padding-right:0px;
+	}
+	.ms{
+		overflow:hidden;
+	}
+	.pl li, .np li{
+		margin: 0 12px 0 12px;
+	}
+	.bt, .pl .bt, .np .bt{/*bitsy, hide on non-bitsy devices*/
+		display:none;
+	}
+}
+@media (max-width:479.9px){
+	.ub, .pl .ub, .np .ub{/*un-bitsy, hide on bitsy devices*/
+		display:none;
+	}
+	ul{
+		padding-right:0px;
+	}
+}
+
+/*@media (max-height:479.9px){*/
+	.tn{/*total max height of standard bitsyBBS thumbnail, half of the size(256x256) so that it looks good even on HD/retina*/
+		max-width:128px;
+		max-height:128px;
+	}
+/*}*/
+@media (max-width:479.9px){
+	.tn{
+		max-width:96px;
+		max-height:96px;
+	}
+}
+
+@media (min-width:480px) and (min-height:480px){
+	/*un bitsy screen based on portrait or landscape. (will be always off on a 'bitsy' device)*/
+	h1{
+		font-size:1.8em;
+	}
+	h2{
+		font-size:1.65em;
+	}
+	h3{
+		font-size:1.53em;
+	}
+	h4{
+		font-size:1.45em;
+	}
+	h5{
+		font-size:1.3em;
+	}
+	h6{
+		font-size:1.2em;
+	}
+	/*
+	h1{
+		font-size:24px;
+	}
+	h2{
+		font-size:18px;
+	}
+	h3{
+		font-size:16px;
+	}
+	h4{
+		font-size:14px;
+	}
+	*/
+}
